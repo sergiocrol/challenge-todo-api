@@ -7,8 +7,13 @@ let Todo = new Schema({
   },
   body: {
     type: String
+  },
+  type: {
+    type: String,
+    enum: ['job', 'studies', 'home', 'misc'],
+    default: 'misc'
   }
-},{ timestamps: true }
+}, { timestamps: true }
 );
 
 module.exports = mongoose.model('Todo', Todo);
